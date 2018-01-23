@@ -7,8 +7,41 @@
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <ion-row>
+    <ion-col>
+      <ion-item>
+    
+      <ion-input ion-text [(ngModel)]="user"></ion-input>
+
+      </ion-item>     
+    
+    </ion-col>
+    <ion-col col-3>
+        <button ion-item color="primary" (click)="userListAll()" >Join</button>
+    </ion-col>
+  </ion-row>
+<ion-row>
+      
+      <ion-col width-30 *ngIf="userList.length>0" >
+        <ion-list *ngFor="let user of userList"  >
+           <ion-item >
+              <b> {{user.user}}</b>
+           </ion-item> 
+        </ion-list>     
+        </ion-col>
+
+
+  <ion-col width-50>
+
+      <ion-item>
+          <ion-input [(ngModel)]="message"></ion-input>
+        </ion-item>
+          <button ion-item full block color="primary" (click)="sendMessage()">Send Message</button>
+      
+  </ion-col>
+</ion-row>
+
+
+  
+
 </ion-content>
