@@ -20,13 +20,13 @@
         <button ion-item color="primary" (click)="userListAll()" >Join</button>
     </ion-col>
   </ion-row>
-<ion-row>
-      
-      <ion-col width-30 *ngIf="userList.length>0" >
+<ion-row>     
+      <ion-col width-30 *ngIf="userList.length>1" >
         <ion-list *ngFor="let user of userList"  >
-           <ion-item >
-              <b> {{user.user}}</b>
-           </ion-item> 
+           <button ion-button (click)="selectUser(user)">         
+              <b> {{user.userName}}</b>
+              <p>{{user.id}}</p>
+           </button> 
         </ion-list>     
         </ion-col>
 
